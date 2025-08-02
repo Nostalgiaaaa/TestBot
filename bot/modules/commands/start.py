@@ -81,11 +81,12 @@ async def p_start(_, msg):
         stat, all_user, tem, timing = await open_check()
         text = f"▎__欢迎进入用户面板！{msg.from_user.first_name}__\n\n" \
                f"**· 🆔 用户のID** | `{msg.from_user.id}`\n" \
-               f"**· 📊 当前状态** | {lv}\n" \
-               f"**· 🍒 积分{sakura_b}** | {us}\n" \
-               f"**· ®️ 注册状态** | {stat}\n" \
-               f"**· 🎫 总注册限制** | {all_user}\n" \
-               f"**· 🎟️ 可注册席位** | {all_user - tem}\n"
+               f"**· 📊 当前状态** | {lv}\n" 
+            #    \
+            #    f"**· 🍒 积分{sakura_b}** | {us}\n" \
+            #    f"**· ®️ 注册状态** | {stat}\n" \
+            #    f"**· 🎫 总注册限制** | {all_user}\n" \
+            #    f"**· 🎟️ 可注册席位** | {all_user - tem}\n"
         if not embyid:
             await asyncio.gather(deleteMessage(msg),
                                  sendPhoto(msg, bot_photo, caption=text, buttons=judge_start_ikb(is_admin, False)))
